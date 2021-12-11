@@ -3,6 +3,8 @@
         <title>RepoGraph</title>
     </head>
     <body>
-        {{ graph }}
+        {% for graphLine in graphArrayNewLines %}
+            {{ graphLine }}<br/>
+        {% endfor %}
     </body>
 </html>

@@ -1,7 +1,7 @@
-from typing import IO
 from flask import Flask, request, render_template
-import os
-import subprocess
+import os, subprocess
+
+from flask.wrappers import Response
 
 app:Flask = Flask(__name__, template_folder = '../templates')
 
@@ -17,10 +17,12 @@ def home():
 def data():
     url:str = request.args['url']
     graph:str = getGraphFromUrl(url)
-    template:str = render_template("data.html", graph = graph)
+    graphArrayNewLine:str = []
+    graphArrayNewLine = graph.splitlines()
+    template:str = render_template("data.html", graphArrayNewLines = graphArrayNewLine)
     return template
 
-def getGraphFromUrl(url:str): #https://github.com/matiassingers/awesome-readme.git
+def getGraphFromUrl(url:str): 
     repoName:str = url.split('/')[4].split('.')[0]
     os.chdir('./support')
     os.remove('dumbFile.txt')
@@ -31,6 +33,7 @@ def getGraphFromUrl(url:str): #https://github.com/matiassingers/awesome-readme.g
     os.system('rm -rf ' + repoName)
     os.system('touch dumbFile.txt')
     return response
+
 ########## end ##########
 
 app.run()
