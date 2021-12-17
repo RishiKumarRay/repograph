@@ -14,4 +14,4 @@ def data() -> str:
     data:Data = Data(url = request.args['url'])
     return data.templateGenerator()
 
-app.run(host="0.0.0.0",port=5000)
+app.run(host = "0.0.0.0",port = 5000)

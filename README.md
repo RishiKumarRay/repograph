@@ -13,10 +13,10 @@ git clone https://github.com/Astro-ton618/repograph.git
 
 ## Usage
 
-Start the virtual environment and start the server.
+Inside the Repograph folder, build and start the docker.
 ```zsh
-source ./venv/bin/activate
-python3 src/main.py
+docker build -t repograph .
+docker run -dp 5000:5000 repograph
 ```
 
 Go tho the default flask [endpoint](http://127.0.0.1:5000/) and paste in the url of the repository.
