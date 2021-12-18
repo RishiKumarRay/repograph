@@ -19,6 +19,17 @@ docker build -t repograph .
 docker run -dp 5000:5000 repograph
 ```
 
+## Usage through docker-compose
+The other way of starting this application is with docker compose file.
+First of all ensure you have install docker compose in your system so that 
+you can start this application with single command everytime. Don't worry Installing Docker compose take few mins just visit offical website and it is one time step only.
+
+after that to run this application in dockerized environment run this command
+```zsh
+docker-compose up  --> to run
+docker-compose down --> to stop
+``` 
+
 Go tho the default flask [endpoint](http://127.0.0.1:5000/) and paste in the url of the repository.
 
 Enjoy😊
